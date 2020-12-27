@@ -53,7 +53,7 @@ class NextcloudSqlStatsHandler(BaseHTTPRequestHandler):
 
                     self.wfile.write(body)
             except:
-                logger.warning("unexpected error.", exc_info=True)
+                _logger.warning("unexpected error.", exc_info=True)
                 self.send_response(HTTPStatus.INTERNAL_SERVER_ERROR)
                 self.send_header('Content-Length', 0)
                 self.end_headers()
